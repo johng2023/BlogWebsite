@@ -1,0 +1,41 @@
+ <%- include("partials/header.ejs") %>
+
+ <main>
+
+
+
+ <div class="container-md">
+
+ <form action="/post" method="GET" class='text-center'>
+ <input type="submit" value="New Post" name="post" id="newPost" class="btn btn-primary mx-5">
+ </form>
+
+   <% if (message) { %>
+     <div class="alert alert-success my-5"><%= message %></div>
+   <% } %>
+
+ <% posts.forEach((post) => { %>
+    <div class="container-md shadow-sm card my-5">
+    <div class="card-body">
+    <h1> <%= post.title %> </h1>
+    <h2> <%= post.date %> </h2>
+    <p class="m-3"> <%= post.blogText %> </p>
+       <form action="/edit/<%= post.id %>" method="GET" style="display:inline;">
+                <button type="submit" class='btn btn-secondary'>Edit</button>
+            </form>
+            <form action="/delete/<%= post.id %>" method="POST" style="display:inline;">
+                <button type="submit" class='btn btn-danger'>Delete</button>
+            </form>
+    </div>
+    </div>
+ <% })%>
+
+
+
+
+
+</div>
+ 
+ </main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+    background-color: #fafafa;
+}
+
+#newPost {
+    width: 125px;
+    height: 40px;
+}
+
+label {
+    font-size: large;
+}
+
+.card {
+    border-radius: 20px;
+    border: 1px solid #dedede;
+    background-color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.005);
+}
